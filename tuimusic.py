@@ -16,9 +16,7 @@ class bcolors:
 def listmp3(mp3_files):
     mp3_files = glob.iglob('**/*.webm', recursive=True)
     listmp3files = []
-    count = 0
-    for file in mp3_files:
-        count += 1
+    for count, file in enumerate(mp3_files, start=1):
         print(f"{bcolors.OKGREEN}{count}. {file}{bcolors.ENDC}")
         listmp3files.append(file)
     return listmp3files
